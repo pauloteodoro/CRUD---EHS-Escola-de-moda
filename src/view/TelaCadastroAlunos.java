@@ -1,7 +1,7 @@
 
 package view;
 
-import DAO.CadastrandoBD;
+import DAO.CaadastrandoBD;
 import DAO.alunoDAO;
 import control.DadosEndereco;
 import control.ValidaCPF;
@@ -416,9 +416,11 @@ public class TelaCadastroAlunos extends javax.swing.JFrame {
         dadosALuno.setCidade(entradaCidade.getText().replaceAll("[^0-9]", ""));
         dadosALuno.setEstado(EntradaEstado.getText().replaceAll("[^0-9]", ""));   
         
+        JOptionPane.showMessageDialog(null, dadosALuno.nome + " Cadastrado com Sucesso ! "  );
+       
+        CaadastrandoBD cadastrar = new CaadastrandoBD(dadosALuno);
         
        
-        CadastrandoBD cadastrar = new CadastrandoBD(dadosALuno);
         
         dispose();
     }//GEN-LAST:event_botaoCadastrarActionPerformed

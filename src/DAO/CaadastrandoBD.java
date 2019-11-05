@@ -12,12 +12,12 @@ import java.util.ArrayList;
 
 
 
-public class CadastrandoBD {
+public class CaadastrandoBD {
 
-    public  CadastrandoBD(alunoDAO aluno) {
-        if(aluno==null){
-			
-		}else{
+    public   CaadastrandoBD(alunoDAO aluno) {
+        if(aluno==null);
+                
+	else{
 			Connection conn = null;
 			try {
 				String sql = "INSERT INTO cadastroalunos "
@@ -47,10 +47,13 @@ public class CadastrandoBD {
 				
 				
 				pstm.execute();
+                                
+                                
 				
 				
 			} catch (Exception e) {
 				System.err.println(e.getMessage());
+                                
 				
 			}finally{
 				Conexao.fechar(conn);
@@ -61,7 +64,10 @@ public class CadastrandoBD {
 //			produtos.add(produto);
 			
 		}
-	}
+        
+
+    }
+
     
     public ArrayList<alunoDAO> listarByNome(String nome){
 		ArrayList<alunoDAO> prod = 
@@ -79,7 +85,7 @@ public class CadastrandoBD {
 	public ArrayList<alunoDAO> listar(){
 		Connection conn  =null;
 		try {
-			String sql = "Select * from tb_produto";
+			String sql = "Select * from cadastroalunos";
 			conn = Conexao.getConexao();
 			PreparedStatement pstm =
 					conn.prepareStatement(sql);
@@ -91,6 +97,7 @@ public class CadastrandoBD {
 				p.setId(rs.getInt("id"));
 				p.setNome(rs.getString("nome"));
 				
+				produtos.add(p);
 			}
 			
 			return produtos;
@@ -104,7 +111,7 @@ public class CadastrandoBD {
 //		return NossoBanco.getInstance().produtos;
 	}
 
-	/*public void remover(long id) {
+	public void remover(long id) {
 		for(alunoDAO p :NossoBanco.getInstance().produtos){
 			if(p.getId()==id){
 				NossoBanco.getInstance().produtos.remove(p);
@@ -112,7 +119,7 @@ public class CadastrandoBD {
 			}
 		}
 		
-	}*/
+	}
 	public void remover(alunoDAO p) {
 		NossoBanco.getInstance().produtos.remove(p);
 	}
@@ -126,10 +133,7 @@ public class CadastrandoBD {
 			}
 		}
 	}
-}
 
-    
-
-    
+}//final
     
   

@@ -14,7 +14,7 @@ public class NossoBanco {
 	}
 	
 	public static NossoBanco getInstance(){
-		if(repositorio== null){
+		if(repositorio == null){
 			repositorio =
 					new NossoBanco();
 		}

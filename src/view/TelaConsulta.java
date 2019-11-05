@@ -5,6 +5,9 @@
  */
 package view;
 
+import DAO.Conexao;
+import java.sql.Connection;
+
 /**
  *
  * @author paulo
@@ -15,6 +18,10 @@ public class TelaConsulta extends javax.swing.JFrame {
      * Creates new form TelaConsulta
      */
     public TelaConsulta() {
+        
+        
+        
+        
         initComponents();
     }
 
@@ -30,6 +37,9 @@ public class TelaConsulta extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
+        scrollPane1 = new java.awt.ScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        TbDados = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -47,6 +57,20 @@ public class TelaConsulta extends javax.swing.JFrame {
                 jTextField1ActionPerformed(evt);
             }
         });
+
+        TbDados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Id", "Nome"
+            }
+        ));
+        jScrollPane1.setViewportView(TbDados);
+
+        scrollPane1.add(jScrollPane1);
 
         jMenu1.setText("Inicio");
         jMenuBar1.add(jMenu1);
@@ -87,6 +111,7 @@ public class TelaConsulta extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(scrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jSeparator1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -103,7 +128,9 @@ public class TelaConsulta extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(414, Short.MAX_VALUE))
+                .addGap(1, 1, 1)
+                .addComponent(scrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 403, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -157,6 +184,7 @@ public class TelaConsulta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable TbDados;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
@@ -165,7 +193,13 @@ public class TelaConsulta extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextField1;
+    private java.awt.ScrollPane scrollPane1;
     // End of variables declaration//GEN-END:variables
+
+
+
+
 }

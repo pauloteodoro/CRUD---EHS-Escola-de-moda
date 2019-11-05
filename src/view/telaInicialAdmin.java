@@ -1,8 +1,10 @@
 
 package view;
 
-import DAO.CadastrandoBD;
+import DAO.CaadastrandoBD;
+import DAO.Conexao;
 import DAO.alunoDAO;
+import DAO.listarDadosBanco;
 import control.autenticacao;
 import control.loginSenha;
 import java.awt.Color;
@@ -12,12 +14,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class telaInicialAdmin  extends JFrame implements ActionListener,KeyListener{
@@ -72,24 +78,31 @@ public class telaInicialAdmin  extends JFrame implements ActionListener,KeyListe
     
     botaoCadastrarUsuario.addActionListener(this);
     botaoListarUsuaios.addActionListener(this);
-      
-        
-    
-    
+   
     }
 
    @Override
     public void actionPerformed(ActionEvent arg) {
         
-        if(arg.getSource().equals(botaoCadastrarUsuario)){        
+        if(arg.getSource().equals(botaoCadastrarUsuario)){   
+           
+		
+            
             TelaCadastroAlunos cadastrando = new TelaCadastroAlunos();
             cadastrando.setTitle("EHS-Cadastro Aluno");
             cadastrando.setLayout(null);
             cadastrando.setResizable(true);
             cadastrando.setLocationRelativeTo(null);
             cadastrando.setVisible(true);  
+            
         }
-        if  (arg.getSource().equals(botaoListarUsuaios)){  
+        
+        else if  (arg.getSource().equals(botaoListarUsuaios)){  
+            
+            
+            //Connection con = Conexao.getConexao();
+           
+            listarDadosBanco l = new listarDadosBanco();
             
             TelaConsulta t = new TelaConsulta();
             t.setTitle("EHS-Consulta Alunos");
@@ -121,6 +134,10 @@ public class telaInicialAdmin  extends JFrame implements ActionListener,KeyListe
 
     @Override
     public void keyReleased(KeyEvent e) {}
+    
+    
+    
+    
         
 }
     
