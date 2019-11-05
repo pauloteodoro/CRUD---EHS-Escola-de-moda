@@ -95,49 +95,18 @@ public class telaInicialAdmin  extends JFrame implements ActionListener,KeyListe
     }
     
     
-	private void atualizarListProdutos() {
-		ArrayList<alunoDAO> produtos = 
-				new alunoDAO().listar();
-
-		DefaultListModel<alunoDAO> modelo =
-				new DefaultListModel<alunoDAO>();
-		for(alunoDAO p : produtos){
-			modelo.addElement(p);
-		}
-		
-		listaProdutos.setModel(modelo);
-	}
 	
-	private void atualizarListProdutos(String nome) {
-		ArrayList<CadastrandoBD> produtos = 
-				new CadastrandoBD(null).listarByNome(nome);
-		DefaultListModel<Produto> modelo =
-				new DefaultListModel<Produto>();
-		for(Produto p : produtos){
-			modelo.addElement(p);
-		}
-		
-		listaProdutos.setModel(modelo);
-	}
-	private void pesquisaPeloNome() {
-		String texto = txtPesquisa.getText().trim();
-		if(texto.length()==0){
-			atualizarListProdutos();
-		}else{
-			atualizarListProdutos(texto);
-		}
-	}
     
     
 
     @Override
     public void keyTyped(KeyEvent e) {
-        pesquisaPeloNome();
+       // pesquisaPeloNome();
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        pesquisaPeloNome();
+        //pesquisaPeloNome();
     }
 
     @Override
