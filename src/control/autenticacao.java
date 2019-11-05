@@ -5,6 +5,7 @@
  */
 package control;
 
+import javax.swing.JOptionPane;
 import view.telaInicialAdmin;
 
 /**
@@ -22,6 +23,9 @@ public class autenticacao {
             telaInicialAdmin inicialMenus = new telaInicialAdmin();
         }
         
+        else {
+            JOptionPane.showMessageDialog(null, " Senha Inválida !");
+        }
         
     }
     

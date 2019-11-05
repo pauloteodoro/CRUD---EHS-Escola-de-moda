@@ -71,6 +71,7 @@ public class telaInicialAdmin  extends JFrame implements ActionListener,KeyListe
     
     
     botaoCadastrarUsuario.addActionListener(this);
+    botaoListarUsuaios.addActionListener(this);
       
         
     
@@ -82,11 +83,20 @@ public class telaInicialAdmin  extends JFrame implements ActionListener,KeyListe
         
         if(arg.getSource().equals(botaoCadastrarUsuario)){        
             TelaCadastroAlunos cadastrando = new TelaCadastroAlunos();
+            cadastrando.setTitle("EHS-Cadastro Aluno");
+            cadastrando.setLayout(null);
+            cadastrando.setResizable(true);
+            cadastrando.setLocationRelativeTo(null);
             cadastrando.setVisible(true);  
         }
         if  (arg.getSource().equals(botaoListarUsuaios)){  
             
-            //ArrayList<alunoDAO> dadosConsulta = new alunoDAO();
+            TelaConsulta t = new TelaConsulta();
+            t.setTitle("EHS-Consulta Alunos");
+            t.setLayout(null);
+            t.setResizable(true);
+            t.setLocationRelativeTo(null);
+            t.setVisible(true);
             
         
         }
