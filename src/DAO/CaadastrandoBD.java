@@ -21,7 +21,7 @@ public class CaadastrandoBD {
 			Connection conn = null;
 			try {
 				String sql = "INSERT INTO cadastroalunos "
-						+ "(cpf,nome,datanascimento,sexo,email,profissao,telefonefixo,telefonecelular,cep,logradouro,numero,bairro,complemento,cidade,estado) VALUES "
+						+ "(cpf,nome,sexo,email,profissao,telefonecelular,cep,logradouro,numero,bairro,complemento,cidade,estado,telefonefixo,datanascimento) VALUES "
                                         + "(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 				
 				conn = Conexao.getConexao();
@@ -33,28 +33,20 @@ public class CaadastrandoBD {
                                 pstm.setString(3, aluno.getSexo());
                                 pstm.setString(4, aluno.getEmail());
                                 pstm.setString(5, aluno.getProfissao());
-                                pstm.setString(16, aluno.getDataNascimento());
-                                pstm.setString(15, aluno.getTelefoneFixo());
-                                pstm.setString(7, aluno.getTelefoneCelular());
-                                pstm.setString(8, aluno.getCep());
-                                pstm.setString(9, aluno.getLogradouro());
-                                pstm.setString(10, aluno.getNumero());
-                                pstm.setString(11, aluno.getBairro());
-                                pstm.setString(12, aluno.getComplemento());
-                                pstm.setString(13, aluno.getCidade());
-                                pstm.setString(14, aluno.getEstado());
-                                
-				
-				
+                                pstm.setString(15, aluno.getDataNascimento());
+                                pstm.setString(14, aluno.getTelefoneFixo());
+                                pstm.setString(6, aluno.getTelefoneCelular());
+                                pstm.setString(7, aluno.getCep());
+                                pstm.setString(8, aluno.getLogradouro());
+                                pstm.setString(9, aluno.getNumero());
+                                pstm.setString(10, aluno.getBairro());
+                                pstm.setString(11, aluno.getComplemento());
+                                pstm.setString(12, aluno.getCidade());
+                                pstm.setString(13, aluno.getEstado());
 				pstm.execute();
-                                
-                                
-				
-				
 			} catch (Exception e) {
 				System.err.println(e.getMessage());
                                 
-				
 			}finally{
 				Conexao.fechar(conn);
 			}

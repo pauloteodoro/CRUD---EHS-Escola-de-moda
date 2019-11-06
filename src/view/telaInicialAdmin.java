@@ -107,7 +107,7 @@ public class telaInicialAdmin  extends JFrame implements ActionListener,KeyListe
             TelaConsulta t = new TelaConsulta();
             t.setTitle("EHS-Consulta Alunos");
             t.setLayout(null);
-            t.setResizable(true);
+            t.setResizable(false);
             t.setLocationRelativeTo(null);
             t.setVisible(true);
             

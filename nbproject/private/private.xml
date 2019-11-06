@@ -4,10 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/paulo/Documents/NetBeansProjects/EHS%20escola%20de%20moda/src/view/TelaConsulta.java</file>
+            <file>file:/C:/Users/paulo/Documents/NetBeansProjects/EHS%20escola%20de%20moda/src/control/autenticacao.java</file>
             <file>file:/C:/Users/paulo/Documents/NetBeansProjects/EHS%20escola%20de%20moda/src/view/telaInicialAdmin.java</file>
             <file>file:/C:/Users/paulo/Documents/NetBeansProjects/EHS%20escola%20de%20moda/src/view/TelaCadastroAlunos.java</file>
-            <file>file:/C:/Users/paulo/Documents/NetBeansProjects/EHS%20escola%20de%20moda/src/view/app.java</file>
-            <file>file:/C:/Users/paulo/Documents/NetBeansProjects/EHS%20escola%20de%20moda/src/view/telaLoginESenha.java</file>
+            <file>file:/C:/Users/paulo/Documents/NetBeansProjects/EHS%20escola%20de%20moda/src/DAO/listarDadosBanco.java</file>
+            <file>file:/C:/Users/paulo/Documents/NetBeansProjects/EHS%20escola%20de%20moda/src/DAO/Conexao.java</file>
+            <file>file:/C:/Users/paulo/Documents/NetBeansProjects/EHS%20escola%20de%20moda/src/DAO/CaadastrandoBD.java</file>
+            <file>file:/C:/Users/paulo/Documents/NetBeansProjects/EHS%20escola%20de%20moda/src/DAO/alunoDAO.java</file>
         </group>
     </open-files>
 </project-private>

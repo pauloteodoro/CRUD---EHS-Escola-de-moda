@@ -9,7 +9,12 @@ import DAO.Conexao;
 import DAO.alunoDAO;
 import DAO.listarDadosBanco;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -22,11 +27,55 @@ public class TelaConsulta extends javax.swing.JFrame {
      * Creates new form TelaConsulta
      */
     public TelaConsulta() {
-        
-        
-        preecherTabela();
-        
+      
         initComponents();
+        
+        DefaultTableModel tbAlunos = (DefaultTableModel) TbDados.getModel();
+        // ArrayList<alunoDAO> alunos =  new ArrayList<>();
+        //listarDadosBanco i = new listarDadosBanco();
+        //alunos = i.listarDadosBanco();
+        
+        try {
+            
+            Connection con = Conexao.getConexao();
+            String sql = "select * From cadastroalunos";
+            PreparedStatement stmt = con.prepareStatement(sql);
+            ResultSet rs = stmt.executeQuery(); 
+            //ArrayList<alunoDAO> alunos = new ArrayList<alunoDAO>();
+            
+            ArrayList<alunoDAO> listaAlunos = new	ArrayList<alunoDAO>();
+			while(rs.next()){
+                            
+				alunoDAO p = new alunoDAO();
+				p.setId(rs.getInt("id"));
+				p.setCpf(rs.getString("cpf"));
+				p.setNome(rs.getString("nome"));
+                                p.setSexo(rs.getString("sexo"));
+                                p.setEmail(rs.getString("email"));
+                                p.setProfissao(rs.getString("profissao"));
+                                p.setTelefoneCelular(rs.getString("telefonecelular"));
+                                p.setCep(rs.getString("cep"));
+                                p.setLogradouro(rs.getString("logradouro"));
+                                p.setNumero(rs.getString("numero"));
+                                p.setBairro(rs.getString("bairro"));
+                                p.setComplemento(rs.getString("complemento"));
+                                p.setCidade(rs.getString("cidade"));
+                                p.setEstado(rs.getString("estado"));
+                                p.setTelefoneFixo(rs.getString("telefonefixo"));
+                                p.setDataNascimento(rs.getString("datanascimento"));
+				
+                                
+                                Object[] dados = {p.id,p.nome};
+                                tbAlunos.addRow(dados);
+			} 
+                        
+                        
+        }   catch (SQLException ex) {
+            Logger.getLogger(listarDadosBanco.class.getName()).log(Level.SEVERE, null, ex);
+           
+        }
+        
+     
     }
 
     /**
@@ -63,6 +112,23 @@ public class TelaConsulta extends javax.swing.JFrame {
         });
 
         TbDados.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        TbDados.setFont(new java.awt.Font("Letter Gothic", 0, 18)); // NOI18N
+        TbDados.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Nome"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(TbDados);
 
         scrollPane1.add(jScrollPane1);
@@ -110,7 +176,7 @@ public class TelaConsulta extends javax.swing.JFrame {
                     .addComponent(jSeparator1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -139,18 +205,7 @@ public class TelaConsulta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
-    private void preecherTabela (){
-        
-        /*ArrayList<alunoDAO> listaAlunos = new ArrayList<alunoDAO>();
-        listarDadosBanco l = new listarDadosBanco();
-        listaAlunos = l.listarDadosBanco();
-        DefaultTableModel modelo = (DefaultTableModel)TbDados.getModel();
-
-        System.out.println(listaAlunos);
-
-        */
-        
-    }
+    
     
     
     

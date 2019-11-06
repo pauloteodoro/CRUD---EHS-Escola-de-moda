@@ -32,6 +32,7 @@ public class listarDadosBanco {
             
             ArrayList<alunoDAO> listaAlunos = new	ArrayList<alunoDAO>();
 			while(rs.next()){
+                            
 				alunoDAO p = new alunoDAO();
 				p.setId(rs.getInt("id"));
 				p.setCpf(rs.getString("cpf"));
@@ -52,6 +53,7 @@ public class listarDadosBanco {
 				listaAlunos.add(p);
                                 System.out.println(p.nome);
 			}
+                        
                         return listaAlunos;
         }   catch (SQLException ex) {
             Logger.getLogger(listarDadosBanco.class.getName()).log(Level.SEVERE, null, ex);
