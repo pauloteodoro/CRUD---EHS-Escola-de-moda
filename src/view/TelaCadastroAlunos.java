@@ -403,18 +403,18 @@ public class TelaCadastroAlunos extends javax.swing.JFrame {
         dadosALuno.setCpf(entradaCPF.getText().replaceAll("[^0-9]", ""));
         dadosALuno.setNome(entradaNomeAluno.getText());
         dadosALuno.setDataNascimento(entradaDataNascimento.getText().replaceAll("[^0-9]", ""));
-        dadosALuno.setSexo(EntradaSexo.getText().replaceAll("[^0-9]", ""));
+        dadosALuno.setSexo(EntradaSexo.getText());
         dadosALuno.setEmail(entradaEmail.getText());
         dadosALuno.setProfissao(EntradaProfissao.getText());
         dadosALuno.setTelefoneCelular(entradaTelefonecelular.getText().replaceAll("[^0-9]", ""));
         dadosALuno.setTelefoneFixo(entradaTelefoneFixo.getText().replaceAll("[^0-9]", ""));
         dadosALuno.setCep(entradaCEP.getText().replaceAll("[^0-9]", ""));
-        dadosALuno.setLogradouro(entradaLogradouro.getText().replaceAll("[^0-9]", ""));
-        dadosALuno.setNumero(entradaNumero.getText().replaceAll("[^0-9]", ""));
-        dadosALuno.setBairro(entradaBairro.getText().replaceAll("[^0-9]", ""));
-        dadosALuno.setComplemento(entradaComplemento.getText().replaceAll("[^0-9]", ""));
-        dadosALuno.setCidade(entradaCidade.getText().replaceAll("[^0-9]", ""));
-        dadosALuno.setEstado(EntradaEstado.getText().replaceAll("[^0-9]", ""));   
+        dadosALuno.setLogradouro(entradaLogradouro.getText());
+        dadosALuno.setNumero(entradaNumero.getText());
+        dadosALuno.setBairro(entradaBairro.getText());
+        dadosALuno.setComplemento(entradaComplemento.getText());
+        dadosALuno.setCidade(entradaCidade.getText());
+        dadosALuno.setEstado(EntradaEstado.getText());   
         
         JOptionPane.showMessageDialog(null, dadosALuno.nome + " Cadastrado com Sucesso ! "  );
        

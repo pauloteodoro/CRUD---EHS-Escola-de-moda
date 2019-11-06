@@ -18,7 +18,8 @@ public class autenticacao {
 
     public  autenticacao(loginSenha autenticaUsuario) {
         
-        if (("admin".equals(autenticaUsuario.getLogin())) && ("admin".equals(autenticaUsuario.getSenha()))) {
+        if (("admin".equals(autenticaUsuario.getLogin())) && ("admin".equals(autenticaUsuario.getSenha())) 
+                || ("anahelo".equals(autenticaUsuario.getLogin())) && ("anaapucarana".equals(autenticaUsuario.getSenha()))) {
             
             telaInicialAdmin inicialMenus = new telaInicialAdmin();
         }

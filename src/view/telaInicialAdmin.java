@@ -100,9 +100,9 @@ public class telaInicialAdmin  extends JFrame implements ActionListener,KeyListe
         else if  (arg.getSource().equals(botaoListarUsuaios)){  
             
             
-            //Connection con = Conexao.getConexao();
-           
-            listarDadosBanco l = new listarDadosBanco();
+            
+            
+            
             
             TelaConsulta t = new TelaConsulta();
             t.setTitle("EHS-Consulta Alunos");

@@ -6,7 +6,11 @@
 package view;
 
 import DAO.Conexao;
+import DAO.alunoDAO;
+import DAO.listarDadosBanco;
 import java.sql.Connection;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -20,7 +24,7 @@ public class TelaConsulta extends javax.swing.JFrame {
     public TelaConsulta() {
         
         
-        
+        preecherTabela();
         
         initComponents();
     }
@@ -58,16 +62,7 @@ public class TelaConsulta extends javax.swing.JFrame {
             }
         });
 
-        TbDados.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null},
-                {null, null},
-                {null, null}
-            },
-            new String [] {
-                "Id", "Nome"
-            }
-        ));
+        TbDados.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jScrollPane1.setViewportView(TbDados);
 
         scrollPane1.add(jScrollPane1);
@@ -115,7 +110,7 @@ public class TelaConsulta extends javax.swing.JFrame {
                     .addComponent(jSeparator1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -144,6 +139,22 @@ public class TelaConsulta extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
+    private void preecherTabela (){
+        
+        /*ArrayList<alunoDAO> listaAlunos = new ArrayList<alunoDAO>();
+        listarDadosBanco l = new listarDadosBanco();
+        listaAlunos = l.listarDadosBanco();
+        DefaultTableModel modelo = (DefaultTableModel)TbDados.getModel();
+
+        System.out.println(listaAlunos);
+
+        */
+        
+    }
+    
+    
+    
+    
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
